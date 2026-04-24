@@ -29,7 +29,11 @@ function inicializarSala(): MatrizButacas {
 // X = ocupada | L = libre
 function mostrarSala(sala: MatrizButacas): void {
   console.log("\n🎞️  SALA DE PROYECCIÓN — MAPA DE BUTACAS");
-  console.log("          " + Array.from({ length: sala[0].length }, (_, i) => String(i + 1).padStart(2)).join(" "));
+  let columnasHeader = "          ";
+  for (let i = 0; i < sala[0].length; i++) {
+    columnasHeader += String(i + 1).padStart(2) + " ";
+  }
+  console.log(columnasHeader);
   console.log("          " + "—".repeat(sala[0].length * 3));
 
   for (let i = 0; i < sala.length; i++) {
